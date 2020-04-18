@@ -71,3 +71,18 @@ body {
     bottom: 0px;
     z-index: 1;
 }
+
+.modal-dialog {
+    .modal-content {
+        background: $background-dark;
+        .modal-title {
+            color: white;
+        }
+        .close {
+            color: $background-pale;
+        }
+    }
+    .modal-body {
+        background: $background-pale;
+    }
+}

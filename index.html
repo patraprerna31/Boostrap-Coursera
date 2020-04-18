@@ -29,7 +29,7 @@
                     <li class="nav-item"><a class="nav-link" href="./contactus.html"><span class="fa fa-address-card fa-lg"></span> Contact</a></li>
                 </ul>
                 <span class="navbar-text">
-                    <a data-toggle="modal" data-target="#loginModal">
+                    <a id="loginButton">
                      <span class="fa fa-sign-in"></span> Login
                 </a>
                 </span>
@@ -41,7 +41,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Reserve a Table </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="closeReserveTable">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form role="form">
@@ -94,7 +94,7 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h4 class="modal-title">Login </h4>
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <button type="button" class="close" id="closeLoginModal">&times;</button>
                 </div>
                 <div class="modal-body">
                     <form>
@@ -135,7 +135,8 @@
                     <img src="img/logo.png" class="image-fluid">
                 </div>
                 <div class="col-12 col-sm-3 align-self-center">
-                    <a data-toggle="modal" data-target="#reserveTable" data-html="true" title="Or Call us at <br><strong>+852 12345678</strong>" data-placement="bottom"><button class="col-12 btn btn-warning">Reserve a Table</button></a>
+                    <a id="reserveButton">
+                        <button class="col-12 btn btn-warning">Reserve a Table</button></a>
                 </div>
             </div>
         </div>
@@ -304,6 +305,18 @@
                 }
 
             });
+            $('#loginButton').click(function() {
+                $('#loginModal').modal('show')
+            });
+            $('#reserveButton').click(function() {
+                $('#reserveTable').modal('show')
+            });
+            $('#closeReserveTable').click(function() {
+                $('#reserveTable').modal('hide')
+            })
+            $('#closeLoginModal').click(function() {
+                $('#loginModal').modal('hide')
+            })
 
         });
     </script>
